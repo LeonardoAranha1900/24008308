@@ -1,1 +1,32 @@
+//exerciciosaldofinanceiro
+#<stdio.h>
 
+int main (){
+	float receita, despesas, saldo;
+	
+	printf("digite o valor da receita em reais: ");
+	scanf("%f"), &receita);
+	
+	printf("digite o valor das despesas em reais: ");
+	scanf("%f", &despesas);
+	
+	saldo = receita - despesas;
+	
+	printf("Saldo da conta: %.2f\n", saldo)
+	
+	return 0;
+}
+
+//exercicioempresa
+#include <stdio.h>
+
+int main (){
+	int visitantes;
+	
+	printf("digite o numero de visitantes: ")
+	scanf("%d", &visitantes)
+	
+	printf("numero de visitantes registrado: %d\n", visitantes);
+	printf("Muito obrigado! O numero da quantidade de visitantes foi registrada com sucesso!\n")
+	return 0;
+}
