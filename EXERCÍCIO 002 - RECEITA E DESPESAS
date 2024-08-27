@@ -1,0 +1,17 @@
+# include <stdio.h>
+
+int main (){
+	float receita, despesas, saldo;
+	
+	printf("digite o valor da receita em reais: ");
+	scanf("%f", &receita);
+	
+	printf("digite o valor das despesas em reais: ");
+	scanf("%f", &despesas);
+	
+	saldo = receita - despesas;
+	
+	printf("Saldo da conta: %.2f", saldo);
+	
+	return 0;
+}
