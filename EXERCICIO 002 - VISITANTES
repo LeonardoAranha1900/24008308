@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main (){
+	int visitantes;
+	
+	printf("digite o numero de visitantes: ");
+	scanf("%d", &visitantes);
+	
+	printf("numero de visitantes registrado: %d\n", visitantes);
+	printf("Muito obrigado! O numero da quantidade de visitantes foi registrada com sucesso!\n");
+	return 0;
+}
