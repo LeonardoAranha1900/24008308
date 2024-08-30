@@ -1,32 +1,40 @@
-//exerciciosaldofinanceiro
-#<stdio.h>
-
-int main (){
-	float receita, despesas, saldo;
-	
-	printf("digite o valor da receita em reais: ");
-	scanf("%f"), &receita);
-	
-	printf("digite o valor das despesas em reais: ");
-	scanf("%f", &despesas);
-	
-	saldo = receita - despesas;
-	
-	printf("Saldo da conta: %.2f\n", saldo)
-	
-	return 0;
-}
-
-//exercicioempresa
+//calculadora de medias e frequencia
 #include <stdio.h>
+#include <stdlib.h>
 
-int main (){
-	int visitantes;
-	
-	printf("digite o numero de visitantes: ")
-	scanf("%d", &visitantes)
-	
-	printf("numero de visitantes registrado: %d\n", visitantes);
-	printf("Muito obrigado! O numero da quantidade de visitantes foi registrada com sucesso!\n")
-	return 0;
+int main()
+{
+    exec:
+    float nota1, nota2 ,nota3, porcpresença, presenças;
+    char conf;
+    
+    printf("sua nota 1:");
+    scanf("%f",&nota1);
+    
+    printf("sua nota 2: ");
+    scanf("%f",&nota2);
+    
+    printf("sua nota 3: ");
+    scanf("%f",&nota3);
+    
+    printf("nota final %.3f\n",( nota3 + nota2 + nota1)/3);
+    printf("deseja recalcular? (S/n)");
+    scanf("%s",&conf);
+    if (conf =='s' || conf =='S'){
+    goto exec;
+    }
+  
+   printf("digite a quantidade de presenças: ");
+   scanf("%f", &presenças);
+   porcpresença = (presenças/60)*100;
+   
+   
+   if (((nota3 + nota2 + nota1)/3>= 5) && (presenças >= 45) ){
+       printf("parabens! voce foi aprovado. Sua porcentagem de frequencia foi: %.2f%%", porcpresença);
+       
+   }
+   else{
+       printf("voce foi reprovado. Sua porcentagem de frequencia foi: %.2f%%", porcpresença);
+   }
+   return(0);
 }
