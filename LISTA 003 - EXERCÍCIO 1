@@ -1,0 +1,41 @@
+//EXERCICIO A
+#include <stdio.h>
+
+int main () 
+{
+ float n=4000000000;
+ printf("%f\n" , n);
+ return 0;
+ }
+
+//EXERCICIO B
+#include <stdio.h>
+
+ int main () {
+ 
+ int a;
+ a=1900;
+ printf ("%d\n", a);
+ 
+ return 0;
+}
+
+//EXERCICIO C
+#include <stdio.h>
+
+int main() {
+    printf("%d\n", 4);
+    printf("%d\n", 2);
+    return 0;
+}
+
+//EXERCICIO D
+#include <stdio.h>
+
+int main() {
+    int a;
+    scanf("%d", &a);    
+    printf("%d\n", a);  
+    return 0;
+}
+
