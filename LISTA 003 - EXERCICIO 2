@@ -42,3 +42,265 @@ int main() {
 }
 
 //EXERCICIO C
+
+#include <stdio.h>
+
+int main() {
+    char nome[50];    
+    int idade, dias;      
+     
+
+    
+    printf("Digite o seu nome: ");
+    scanf("%s", nome);
+
+    printf("Digite a sua idade: ");
+    scanf("%d", &idade);
+
+
+    dias = idade * 365;
+
+    printf("%s, voce tem aproximadamente %d dias de vida.\n", nome, dias);
+
+    return 0;
+}
+
+// EXERCICIO D
+
+#include <stdio.h>
+
+int main() {
+   
+    float raio, area;      
+     
+
+    
+    printf("Digite o raio do circulo em cm: ");
+    scanf("%f", &raio);
+
+
+
+    area = (3.14*(raio*raio));
+
+    printf("A area do circulo e aproximadamente: %.2f cm", area);
+
+    return 0;
+}
+
+//EXERCICIO E
+
+#include <stdio.h>
+
+int main() {
+   
+    float largura, altura, areapare, latas;  
+    
+    printf("Digite altura em metros: ");
+    scanf("%f", &altura);
+    printf("Digite largura em metros: ");
+    scanf("%f", &largura);
+    
+    areapare = largura*altura;
+    latas = (areapare*0.3)/2;
+printf("A area de sua parede é %f. Portanto voce precisará de %f latinhas", areapare, latas);
+
+
+    return 0;
+}
+
+
+//EXERCICIO F
+
+#include <stdio.h>
+
+int main() {
+    float fahrenheit, celsius;
+
+   
+    printf("Digite a temperatura em graus Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+
+  
+    celsius = (5.0 / 9.0) * (fahrenheit - 32);
+
+    
+    printf("A temperatura em graus Celsius e: %.2f\n", celsius);
+
+    return 0;
+}
+
+
+//EXERCICIO G
+
+#include <stdio.h>
+
+int main() {
+    float pressao, volume, temperatura, massa;
+
+   
+    printf("Digite a pressao presente no pneu: ");
+    scanf("%f", &pressao);
+    printf("Digite o volume presente no pneu: ");
+    scanf("%f", &volume);
+    printf("Digite a temperatura em graus Celsius presente no pneu: ");
+    scanf("%f", &temperatura);
+    
+    massa = (pressao * volume) / (0.37 * (temperatura + 460));
+    
+    printf("A massa de ar presente no pneu é: %f", massa);
+
+
+    return 0;
+}
+
+
+//EXERCICIO H
+
+#include <stdio.h>
+
+int main() {
+    int primeiroT, razao, n, nesimotermo;
+
+    
+    printf("Digite o primeiro termo da PA: ");
+    scanf("%d", &primeiroT);
+    printf("Digite a razao da PA: ");
+    scanf("%d", &razao);
+    printf("Digite o valor de N (o termo que deseja calcular): ");
+    scanf("%d", &n);
+
+   
+    nesimotermo = primeiroT + (n - 1) * razao;
+
+    
+    printf("O %d-ésimo termo da PA é: %d\n", n, nesimotermo);
+
+    return 0;
+}
+
+//EXERCICIO I
+
+#include <stdio.h>
+
+
+int main() {
+    
+    float a, b, c;  
+    float delta, raiz1, raiz2;
+
+    
+    float raizQ(int n) {
+        float x = n;
+        float y = 1;
+        float epsilon = 0.00001; 
+        while (x - y > epsilon) {
+            x = (x + y) / 2;
+            y = n / x;
+        }
+
+        return x;
+    }
+
+   
+    printf("Digite o coeficiente a: ");
+    scanf("%f", &a);
+    printf("Digite o coeficiente b: ");
+    scanf("%f", &b);
+    printf("Digite o coeficiente c: ");
+    scanf("%f", &c);
+
+   
+    if (a == 0) {
+        printf("O coeficiente 'a' não deve ser zero em uma equação de segundo grau.\n");
+        return 1; 
+    }
+
+    
+    delta = b * b - 4 * a * c;
+
+    
+    if (delta > 0) {
+        
+        float deltaRaiz = raizQ((int)delta); 
+        raiz1 = (-b + deltaRaiz) / (2 * a);
+        raiz2 = (-b - deltaRaiz) / (2 * a);
+        printf("As raízes da equação são: %.2f e %.2f\n", raiz1, raiz2);
+    } else if (delta == 0) {
+        
+        raiz1 = -b / (2 * a);
+        printf("A raiz da equação é: %.2f\n", raiz1);
+    } else {
+        
+        float realParte = -b / (2 * a);
+        float imaginario = raizQ((int)(- delta)) / (2 * a);
+        printf("As raízes da equação são complexas:\n");
+        printf("Raiz 1: %.2f + %.2fi\n", realParte, imaginario);
+        printf("Raiz 2: %.2f - %.2fi\n", realParte, imaginario);
+    }
+
+    return 0;
+}
+
+
+//EXERCICIO J
+
+#include <stdio.h>
+int main()
+{ 
+    
+    int um, dez, cinquenta, cem, valortotal;
+    
+
+
+printf("Digite a quantidade de notas de 1 real: ");
+scanf("%d", &um);
+
+printf("Digite a quantidade de notas de 10 reais: ");
+scanf("%d", &dez);
+
+printf("Agora digite a quantidade de notas de 50 reais: ");
+scanf("%d", &cinquenta);
+
+printf("Por úlitmo, digite a quantidade de notas de 100 reais: ");
+scanf("%d", &cem);
+
+valortotal = (um*1+dez*10+cinquenta*50+cem*100);
+printf("O valor total e: %.3d", valortotal);
+  
+return 0;
+}
+  
+
+//EXERCICIO K
+
+#include <stdio.h>
+
+int main() {
+    int valorTotal;
+    int cem, cinquenta, dez, um;
+
+   
+    printf("Digite o valor total em reais: ");
+    scanf("%d", &valorTotal);
+
+    
+    cem = valorTotal / 100;
+    valorTotal %= 100; 
+
+    cinquenta = valorTotal / 50;
+    valorTotal %= 50; 
+
+    dez = valorTotal / 10;
+    valorTotal %= 10; 
+
+    
+    um = valorTotal;
+
+    printf("Notas de 100 reais: %d\n", cem);
+    printf("Notas de 50 reais: %d\n", cinquenta);
+    printf("Notas de 10 reais: %d\n", dez);
+    printf("Notas de 1 real: %d\n", um);
+
+    return 0;
+}
+
