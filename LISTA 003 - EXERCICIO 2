@@ -51,7 +51,7 @@ int main() {
      
 
     
-    printf("Digite o seu nome: ");
+    printf("Digite o seu primeiro nome: ");
     scanf("%s", nome);
 
     printf("Digite a sua idade: ");
