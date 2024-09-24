@@ -1,0 +1,32 @@
+// Imprime os números de 1 a 10
+#include <stdio.h>
+int main() {
+for (int i = 1; i <= 10; i++) {
+printf("%d\n", i);
+}
+return 0;
+}
+*/ --- EXPLICAÇÃO
+FOR:
+- Permite executar, repetidamente, um conjunto de comandos de acordo
+com uma condição
+for(inicialização; condição; incremento){
+//Conjunto de comandos
+}
+/*
+Exercício 1: Imprima os números de 1 a 50.
+Exercício 2: Imprima os números de 50 a 1.
+Exercício3:
+A) Crie um algoritmo que calculo a média de um aluno com base em duas notas;
+B) Inclua uma análise se ele está aprovado ou não;
+C) Pergunte para o professor quantos alunos a turma possui, e repita o processo
+para quantidade de alunos que ele digitou. (utilize for).
+Exercício4:
+A) Elabore um algoritmo que efetue a soma de todos os números pares que se
+encontram no conjunto dos números de 1 até 500
+Saída - para o valor 500, o resulta do é 62750
+B) Altere o algoritmo e pergunte um número positivo para o usuário. Retorne a soma
+de todos os números pares no intervalo entre 1 o valor do número.
+valores para teste: para 30, saída 240
+para 800, saída 160.400
+para 1699, saída 721.650
