@@ -42,12 +42,12 @@ int main() {
 #include <stdio.h>
 
 int main() {
-    int F, C;  // Variáveis para Fahrenheit e Celsius como int
+    int F, C;  
 
     printf("Digite um valor em Fahrenheit (int): ");
     scanf("%d", &F);  
 
-    C = (5 / 9) * (F - 32);  // Aqui ocorre erro de precisão
+    C = (5 / 9) * (F - 32);  
 
     printf("Resultado: %d°C\n", C);
 
