@@ -1,0 +1,399 @@
+1) EXERCÍCIO WHILE E DO-WHILE
+//EXERCÍCIO 1
+#include <stdio.h>
+#include <stdlib.h>
+
+double temperatura;
+
+int main() {
+    while (1) {
+        printf("Digite a temperatura atual: ");
+        scanf("%lf", &temperatura);
+
+        if (temperatura < 20) {
+            printf("Temperatura baixa! Desligando refrigeração...\n");
+        } else if (temperatura > 25) {
+            printf("Temperatura alta! Ligando refrigeração...\n");
+        } else {
+            printf("Temperatura conforme!\n");
+        }
+    }
+
+    return 0;
+}
+
+//EXERCÍCIO 2
+#include <stdio.h>
+#include <stdlib.h>
+
+int bateria;
+
+int main() {
+    while (1) {
+        printf("Digite o percentual de bateria: ");
+        scanf("%d", &bateria);
+
+        if (bateria == 100) {
+            printf("Bateria totalmente carregada!\n");
+        } else if (bateria < 15) {
+            printf("Bateria baixa! Favor recarregar!\n");
+        } else {
+            printf("Bateria moderada! Se atente ao nivel!\n");
+        }
+    }
+
+    return 0;
+}
+
+//EXERCÍCIO 3
+#include <stdio.h>
+
+int main() {
+    int passos, passostot = 0;
+    const int meta = 10000;
+
+    printf("Controle de passos da meta diária: %d passos\n", meta);
+
+    while (passostot < meta) {
+        printf("\nDigite a quantidade de passos dados: ");
+        scanf("%d", &passos);
+
+        if (passos < 0) {
+            printf("Quantidade de passos inválida. Tente novamente.\n");
+            continue;
+        }
+
+        passostot += passos;
+        printf("Quantidade de passos atual: %d\n", passostot);
+
+        if (passostot >= meta) {
+            printf("Parabéns! Você atingiu a meta diária de %d passos!\n", meta);
+        } else {
+            printf("Faltam %d passos para batermos a meta.\n", meta - passostot);
+        }
+    }
+
+    return 0;
+}
+
+//EXERCÍCIO 4
+#include <stdio.h>
+
+int main() {
+    float deposito;
+
+    printf("Bem-vindo ao banco Aranha!\n");
+    printf("O valor minimo para abrir uma conta é de R$ 500,00.\n");
+
+    do {
+        printf("Insira o valor do depósito inicial: R$ ");
+        scanf("%f", &deposito);
+
+        if (deposito < 500.00) {
+            printf("Erro: O valor minimo para abrir a conta é R$ 500,00. Tente novamente.\n");
+        } else {
+            printf("Depósito de R$ %.2f aceito! Sua conta foi aberta com sucesso.\n", deposito);
+        }
+    } while (deposito < 500.00);
+
+    return 0;
+}
+
+2) EXERCÍCIO DO-WHILE
+//EXERCÍCIO 1
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int x = 5, y = 5; 
+    char comando[10];
+
+    printf("Controle de Movimentação do Robô\n");
+    printf("Espaço Limite: 10x10 metros (0 <= x <= 10, 0 <= y <= 10)\n");
+    printf("Comandos: 'frente', 'tras', 'esquerda', 'direita', 'sair'\n");
+    printf("Posição inicial: (%d, %d)\n", x, y);
+
+    while (1) {
+        printf("\nDigite o comando: ");
+        scanf("%s", comando);
+
+        if (strcmp(comando, "sair") == 0) {
+            printf("Movimentação encerrada. Posição atual: (%d, %d)\n", x, y);
+            break;
+        } else if (strcmp(comando, "frente") == 0) {
+            if (y < 10) {
+                y++;
+            } else {
+                printf("Movimento inválido: o robô já está no limite superior do espaço.\n");
+            }
+        } else if (strcmp(comando, "tras") == 0) {
+            if (y > 0) {
+                y--;
+            } else {
+                printf("Movimento inválido: o robô já está no limite inferior do espaço.\n");
+            }
+        } else if (strcmp(comando, "esquerda") == 0) {
+            if (x > 0) {
+                x--;
+            } else {
+                printf("Movimento inválido: o robô já está no limite esquerdo do espaço.\n");
+            }
+        } else if (strcmp(comando, "direita") == 0) {
+            if (x < 10) {
+                x++;
+            } else {
+                printf("Movimento inválido: o robô já está no limite direito do espaço.\n");
+            }
+        } else {
+            printf("Comando inválido. Tente novamente.\n");
+        }
+        printf("Posição atual do robô: (%d, %d)\n", x, y);
+    }
+
+    return 0;
+}
+
+//EXERCÍCIO 2
+#include <stdio.h>
+
+int main() {
+    float distancia;
+    char continuar;
+
+    printf("Leitura do Sensor de Distância\n");
+    printf("O Programa irá parar assim que a distância for menor do que 10cm.\n");
+
+    do {
+        printf("Insira a distancia registrada no sensor (em cm): ");
+        scanf("%f", &distancia);
+
+        if (distancia < 10.0) {
+            printf("Distância registrada: %.2f cm. Distancia menor do que 10cm! O Programa será encerrado...\n", distancia);
+            break;
+        }
+
+        printf("Distância registrada: %.2f cm.\n", distancia);
+        printf("Deseja continuar a leitura? (s/n): ");
+        scanf(" %c", &continuar);
+    } while (continuar == 's' || continuar == 'S');
+
+    printf("Programa encerrado por medidas protetivas.\n");
+    return 0;
+}
+
+
+//EXERCICIO 3
+
+#include <stdio.h>
+
+int main() {
+    int opcao;
+
+    printf("Controle de Atuação do Robô\n");
+    printf("Selecione uma ação para o robô realizar:\n");
+    printf("1 - Ligar lâmpada\n");
+    printf("2 - Tocar som\n");
+    printf("3 - Mover braço\n");
+    printf("0 - Encerrar programa\n");
+
+    do {
+        printf("\nDigite a sua escolha: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("lampada ligada.\n");
+                break;
+            case 2:
+                printf("O robô tocou um som.\n");
+                break;
+            case 3:
+                printf("O robô moveu o braço.\n");
+                break;
+            case 0:
+                printf("Encerrando o programa...\n");
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+        }
+    } while (opcao != 0);
+
+    return 0;
+}
+
+//EXERCÍCIO 4
+
+#include <stdio.h>
+
+int main() {
+    int bateria;
+
+    printf("Sistema de monitoramento da energia do Robo\n");
+    printf("O robo avisará quando a bateria estiver abaixo de 20%%.\n");
+
+    do {
+        printf("\nDigite o nível atual da bateria (0-100%%): ");
+        scanf("%d", &bateria);
+
+        if (bateria < 0 || bateria > 100) {
+            printf("Nivel nao aceito! Digite um valor entre 0 e 100.\n");
+        } else if (bateria <= 20) {
+            printf("Bateria baixa! Nivel atual: %d%%.\n", bateria);
+        } else {
+            printf("Bateria suficiente! Nivel atual: %d%%.\n", bateria);
+        }
+    } while (bateria <= 20);
+
+    printf("\nBateria acima de 20%%.\n");
+    return 0;
+}
+
+// EXERCÍCIO 5
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int x = 2, y = 2; 
+    char comando[10];
+
+    printf("Navegaçao autonoma (simulaçao)\n");
+    printf("Espaço: 5x5 (0 <= x <= 4, 0 <= y <= 4)\n");
+    printf("Comandos: 'cima', 'baixo', 'esquerda', 'direita', 'parar'\n");
+    printf("Posição inicial: (%d, %d)\n", x, y);
+
+    while (1) {
+        printf("\nDigite o comando: ");
+        scanf("%s", comando);
+
+        if (strcmp(comando, "parar") == 0) {
+            printf("Programa encerrado. Posição final do robô: (%d, %d)\n", x, y);
+            break;
+        } else if (strcmp(comando, "cima") == 0) {
+            if (y < 4) {
+                y++;
+            } else {
+                printf("Movimento inválido: o robô já está no limite superior do grid.\n");
+            }
+        } else if (strcmp(comando, "baixo") == 0) {
+            if (y > 0) {
+                y--;
+            } else {
+                printf("Movimento inválido: o robô já está no limite inferior do grid.\n");
+            }
+        } else if (strcmp(comando, "esquerda") == 0) {
+            if (x > 0) {
+                x--;
+            } else {
+                printf("Movimento inválido: o robô já está no limite esquerdo do grid.\n");
+            }
+        } else if (strcmp(comando, "direita") == 0) {
+            if (x < 4) {
+                x++;
+            } else {
+                printf("Movimento inválido: o robô já está no limite direito do grid.\n");
+            }
+        } else {
+            printf("Comando inválido. Tente novamente.\n");
+        }
+        printf("Posição atual do robô: (%d, %d)\n", x, y);
+    }
+
+    return 0;
+}
+
+3) EXERCÍCIOS PRÁTICOS ARDUINO E ESTRUTURAS DE REPETIÇAO
+
+//EXERCÍCIO 1
+
+int cameraData [10]
+
+//EXERCÍCIO 2
+
+analogRead (A1) = Lê o valor lógico no pino A1
+cameraData[3] = Armazena o valor lido na quarta posição do vetor
+
+//EXERCÍCIO 3
+
+float temp[5]={26.5,26.0,24.8,27.3,26.5}
+
+//EXERCÍCIO 4
+
+for(int i = 0; i<4. i++)
+serial.printLn(Ledpins[1]);
+
+esse código percorre as 4 primeiras posições de um vetor Ledpin e imprime cada valor.
+Exemplo: Ledpins={2,3,4,5}
+2
+3
+4
+5
+
+//EXERCÍCIO 5
+
+int ledPins[] = {2, 3, 4, 5}; 
+
+void setup() {
+    Serial.begin(9600); 
+}
+
+void loop() {
+    for (int i = 0; i < 4; i++) {
+        Serial.println(ledPins[i]); 
+    }
+    delay(1000); 
+}
+
+//EXERCÍCIO 6
+
+int randomValues[5]; 
+for (int i = 0; i < 5; i++) {
+    randomValues[i] = random(0, 51); 
+}
+
+//EXERCÍCIO 7
+
+O Código citado segue os valores do vetor sensorReadings com tamanho tamanhoVetor. Desse modo, ele verifica se o valor é igual a 150 e caso seja, ele encerra o programa, se não, ele continua.
+
+//EXERCÍCIO 8
+
+int sensorData[10];
+int tamanho = sizeof(sensorData) / sizeof(sensorData[0]);
+
+sizeof(sensorData) tem a função de retornar o tamanho total do vetor. Já o comando sizeof(sensorData[0]) retorna o valor ao tamanho de um único elemento.
+Desse modo, a divisão possui o papel de mostrar a quantidade de elementos presentes no vetor.
+
+4) PROBLEMAS
+
+//EXECÍCIO A
+
+A primeira linha do array ambientData ({22, 25, 23, 21, 24}) fornece as leituras de temperatura em graus Celsius registradas no primeiro local de monitoramento, em cinco pontos de tempo diferentes. 
+Esses valores descrevem como as temperaturas mudaram durante o período monitorado
+
+//EXERCÍCIO B
+
+A segunda linha da matriz representa os dados de umidade do solo no segundo local de monitoramento. Resultando no seguinte dado:
+(45+38+42+40+37)/5 = 40,4%
+
+//EXERCÍCIO C
+
+A terceira linha da matriz registra os valores de concentração de CO2 (PPM) no terceiro local. Dado a isso, o valor mais alto ocorre no terceiro momento ou índice 2 da matriz (420 PPM).
+
+//EXERCÍCIO D
+
+int locais = 3;
+int leituras = 5;
+int temperaturas = 0;
+
+for (int i = 0; i < locais; i++) {
+    for (int j = 0; j < leituras; j++) {
+        temperaturas += ambientData[i][j];
+    }
+}
+
+float mediaTemperatura = somaTemperaturas / float(locais * leituras);
+Serial.print("Media de temperatura: ");
+Serial.println(mediaTemperatura);
+
+
+
